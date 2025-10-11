@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuizIt - Performance Analytics">
+    <meta name="theme-color" content="#6366f1">
+    <title>QuizIt - Analytics</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/analytics.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <a href="index.html" class="back-btn">← Back</a>
+                <h1 id="setTitle" class="page-title">Analytics</h1>
+                <button id="themeToggle" class="icon-btn" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="analytics-container">
+            <div class="analytics-wrapper">
+
+                <!-- Overview Stats -->
+                <section class="overview-section">
+                    <h2>Overview</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">📚</div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="totalCards">0</div>
+                                <div class="stat-label">Total Cards</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📖</div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="totalSessions">0</div>
+                                <div class="stat-label">Study Sessions</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⏱️</div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="totalTime">0h 0m</div>
+                                <div class="stat-label">Total Time</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="overallAccuracy">0%</div>
+                                <div class="stat-label">Overall Accuracy</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="masteryLevel">0%</div>
+                                <div class="stat-label">Mastery Level</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📈</div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="avgScore">0%</div>
+                                <div class="stat-label">Average Score</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Performance Over Time Chart -->
+                <section class="chart-section">
+                    <h2>Performance Over Time</h2>
+                    <div class="chart-controls">
+                        <select id="timeRangeSelect" class="chart-select">
+                            <option value="7">Last 7 Days</option>
+                            <option value="30" selected>Last 30 Days</option>
+                            <option value="90">Last 90 Days</option>
+                            <option value="all">All Time</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- Accuracy by Mode Chart -->
+                <section class="chart-section">
+                    <h2>Accuracy by Study Mode</h2>
+                    <div class="chart-container chart-container-small">
+                        <canvas id="accuracyByModeChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- Study Sessions History -->
+                <section class="sessions-section">
+                    <h2>Recent Study Sessions</h2>
+                    <div id="sessionsContainer" class="sessions-list">
+                        <!-- Sessions will be dynamically loaded -->
+                    </div>
+                </section>
+
+                <!-- Card Performance Details -->
+                <section class="card-performance-section">
+                    <h2>Card Performance</h2>
+                    <div class="performance-controls">
+                        <select id="performanceFilter" class="chart-select">
+                            <option value="all">All Cards</option>
+                            <option value="struggling">Struggling With</option>
+                            <option value="mastered">Mastered</option>
+                            <option value="learning">Learning</option>
+                        </select>
+                        <select id="sortBy" class="chart-select">
+                            <option value="accuracy">Sort by Accuracy</option>
+                            <option value="attempts">Sort by Attempts</option>
+                            <option value="lastStudied">Sort by Last Studied</option>
+                        </select>
+                    </div>
+                    <div id="cardPerformanceContainer" class="card-performance-list">
+                        <!-- Card performance items will be dynamically loaded -->
+                    </div>
+                </section>
+
+                <!-- Heatmap -->
+                <section class="heatmap-section">
+                    <h2>Study Activity Heatmap</h2>
+                    <div id="heatmapContainer" class="heatmap-container">
+                        <!-- Heatmap will be dynamically generated -->
+                    </div>
+                </section>
+
+                <!-- Flashcard Mastery Heatmap -->
+                <section class="heatmap-section">
+                    <h2>Flashcard Mastery Heatmap</h2>
+                    <p style="font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: var(--spacing-md);">
+                        Click on any card to view its details
+                    </p>
+                    <div class="mastery-legend">
+                        <span class="legend-label">0%</span>
+                        <div class="legend-gradient"></div>
+                        <span class="legend-label">100%</span>
+                    </div>
+                    <div id="cardMasteryHeatmap" class="card-mastery-heatmap">
+                        <!-- Card mastery heatmap will be dynamically generated -->
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Card Detail Modal -->
+    <div id="cardDetailModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Card Details</h2>
+            <div id="cardDetailContent" class="card-detail-content">
+                <div class="flashcard-preview">
+                    <div class="flashcard-preview-side">
+                        <div class="card-label">TERM</div>
+                        <img id="modalCardFrontImage" class="card-image" style="display: none;" alt="">
+                        <div id="modalCardFront" class="card-content"></div>
+                    </div>
+                    <div class="flashcard-preview-side">
+                        <div class="card-label">DEFINITION</div>
+                        <img id="modalCardBackImage" class="card-image" style="display: none;" alt="">
+                        <div id="modalCardBack" class="card-content"></div>
+                    </div>
+                </div>
+                <div class="card-detail-stats">
+                    <div class="detail-stat">
+                        <span class="detail-label">Mastery</span>
+                        <span id="modalCardMastery" class="detail-value">0%</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="detail-label">Accuracy</span>
+                        <span id="modalCardAccuracy" class="detail-value">0%</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="detail-label">Total Attempts</span>
+                        <span id="modalCardAttempts" class="detail-value">0</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="detail-label">Correct</span>
+                        <span id="modalCardCorrect" class="detail-value">0</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="detail-label">Incorrect</span>
+                        <span id="modalCardIncorrect" class="detail-value">0</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="detail-label">Next Review</span>
+                        <span id="modalCardNextReview" class="detail-value">-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="closeCardDetail" class="btn btn-primary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Session Item Template -->
+    <template id="sessionTemplate">
+        <div class="session-item">
+            <div class="session-header">
+                <div class="session-mode"></div>
+                <div class="session-date"></div>
+            </div>
+            <div class="session-stats">
+                <span class="session-stat">
+                    <span class="stat-label">Cards:</span>
+                    <span class="session-cards"></span>
+                </span>
+                <span class="session-stat">
+                    <span class="stat-label">Accuracy:</span>
+                    <span class="session-accuracy"></span>
+                </span>
+                <span class="session-stat">
+                    <span class="stat-label">Time:</span>
+                    <span class="session-duration"></span>
+                </span>
+            </div>
+        </div>
+    </template>
+
+    <!-- Card Performance Item Template -->
+    <template id="cardPerformanceTemplate">
+        <div class="card-performance-item">
+            <div class="card-performance-header">
+                <div class="card-term"></div>
+                <div class="card-status-badge"></div>
+            </div>
+            <div class="card-performance-stats">
+                <div class="performance-stat">
+                    <span class="stat-label">Accuracy</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="stat-value"></span>
+                </div>
+                <div class="performance-stat-grid">
+                    <div class="mini-stat">
+                        <span class="mini-label">Attempts</span>
+                        <span class="mini-value attempts-count"></span>
+                    </div>
+                    <div class="mini-stat">
+                        <span class="mini-label">Correct</span>
+                        <span class="mini-value correct-count"></span>
+                    </div>
+                    <div class="mini-stat">
+                        <span class="mini-label">Last Studied</span>
+                        <span class="mini-value last-studied"></span>
+                    </div>
+                    <div class="mini-stat">
+                        <span class="mini-label">Next Review</span>
+                        <span class="mini-value next-review"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="lib/chart.min.js"></script>
+    <script type="module" src="js/analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuizIt - Study Mode">
+    <meta name="theme-color" content="#6366f1">
+    <title>QuizIt - Study</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header study-header">
+            <div class="header-content">
+                <a href="index.html" class="back-btn">← Back</a>
+                <div class="study-info">
+                    <h1 id="setTitle" class="set-name">Study Set</h1>
+                    <span id="modeLabel" class="mode-label"></span>
+                </div>
+                <button id="themeToggle" class="icon-btn" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="study-progress">
+            <div class="progress-info">
+                <span id="progressText">0 / 0</span>
+                <span id="accuracyText">Accuracy: 0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <!-- Main Study Area -->
+        <main class="study-container">
+
+            <!-- Flashcards Mode -->
+            <div id="flashcardsMode" class="study-mode" style="display: none;">
+                <div class="flashcard-wrapper">
+                    <div id="flashcard" class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="card-label">Question</div>
+                                <img id="cardFrontImage" class="card-image" style="display: none;" alt="">
+                                <div id="cardFront" class="card-content"></div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="card-label">Answer</div>
+                                <img id="cardBackImage" class="card-image" style="display: none;" alt="">
+                                <div id="cardBack" class="card-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="card-hint">Click card to flip</p>
+                </div>
+
+                <div class="confidence-rating" id="confidenceRating" style="display: none;">
+                    <p>How well did you know this?</p>
+                    <div class="rating-buttons">
+                        <button class="btn-rating" data-rating="1">😔 Again</button>
+                        <button class="btn-rating" data-rating="3">🤔 Hard</button>
+                        <button class="btn-rating" data-rating="4">😊 Good</button>
+                        <button class="btn-rating" data-rating="5">😄 Easy</button>
+                    </div>
+                </div>
+
+                <div class="study-controls" id="flashcardControls">
+                    <button id="prevCard" class="btn btn-secondary">← Previous</button>
+                    <button id="shuffleCards" class="btn btn-secondary">🔀 Shuffle</button>
+                    <button id="nextCard" class="btn btn-primary">Next →</button>
+                </div>
+            </div>
+
+            <!-- Learn Mode -->
+            <div id="learnMode" class="study-mode" style="display: none;">
+                <div class="learn-wrapper">
+                    <div class="learn-card">
+                        <div class="card-label">Question</div>
+                        <img id="learnQuestionImage" class="card-image" style="display: none;" alt="">
+                        <div id="learnQuestion" class="card-content"></div>
+                    </div>
+
+                    <div id="learnAnswer" class="learn-answer" style="display: none;">
+                        <div class="answer-section">
+                            <div class="card-label">Your Answer</div>
+                            <div id="userAnswer" class="user-answer"></div>
+                        </div>
+                        <div class="answer-section">
+                            <div class="card-label">Correct Answer</div>
+                            <div id="correctAnswer" class="correct-answer"></div>
+                        </div>
+                        <div id="answerFeedback" class="answer-feedback"></div>
+                    </div>
+
+                    <div id="learnInput" class="learn-input-section">
+                        <textarea
+                            id="answerInput"
+                            class="answer-textarea"
+                            placeholder="Type your answer here..."
+                            rows="3"
+                        ></textarea>
+                        <button id="checkAnswer" class="btn btn-primary">Check Answer</button>
+                    </div>
+
+                    <div id="learnContinue" class="learn-continue" style="display: none;">
+                        <button id="continueLearn" class="btn btn-primary">Continue →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Mode -->
+            <div id="testMode" class="study-mode" style="display: none;">
+                <div class="test-wrapper">
+                    <div class="test-question">
+                        <div class="question-number">Question <span id="questionNum">1</span></div>
+                        <img id="testQuestionImage" class="card-image" style="display: none;" alt="">
+                        <div id="testQuestion" class="card-content"></div>
+                    </div>
+
+                    <div id="testChoices" class="test-choices">
+                        <!-- Multiple choice options will be inserted here -->
+                    </div>
+
+                    <div id="testWritten" class="test-written" style="display: none;">
+                        <textarea
+                            id="testWrittenAnswer"
+                            class="answer-textarea"
+                            placeholder="Type your answer here..."
+                            rows="4"
+                        ></textarea>
+                    </div>
+
+                    <div id="testFeedback" class="test-feedback" style="display: none;"></div>
+
+                    <div class="study-controls">
+                        <button id="submitTest" class="btn btn-primary">Submit Answer</button>
+                        <button id="nextTest" class="btn btn-primary" style="display: none;">Next Question →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Match Mode -->
+            <div id="matchMode" class="study-mode" style="display: none;">
+                <div class="match-wrapper">
+                    <div class="match-timer">
+                        <span>Time: <span id="matchTimer">0:00</span></span>
+                        <span>Matches: <span id="matchCount">0 / 0</span></span>
+                    </div>
+
+                    <div id="matchGrid" class="match-grid">
+                        <!-- Match tiles will be inserted here -->
+                    </div>
+
+                    <div id="matchComplete" class="match-complete" style="display: none;">
+                        <h2>🎉 Completed!</h2>
+                        <p>Time: <span id="finalTime"></span></p>
+                        <button id="restartMatch" class="btn btn-primary">Play Again</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session Complete -->
+            <div id="sessionComplete" class="session-complete" style="display: none;">
+                <div class="complete-content">
+                    <h2>🎉 Session Complete!</h2>
+                    <div class="session-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="totalCards">0</div>
+                            <div class="stat-label">Cards Studied</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="finalAccuracy">0%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="studyTime">0:00</div>
+                            <div class="stat-label">Study Time</div>
+                        </div>
+                    </div>
+                    <div class="complete-actions">
+                        <button id="studyAgain" class="btn btn-primary">Study Again</button>
+                        <a href="index.html" class="btn btn-secondary">Back to Sets</a>
+                        <button id="viewAnalytics" class="btn btn-secondary">View Analytics</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/study-modes.js"></script>
+</body>
+</html>

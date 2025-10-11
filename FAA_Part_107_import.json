@@ -1,0 +1,890 @@
+[
+  {
+    "front": "The number of drones you can fly simultaneously.",
+    "back": "1"
+  },
+  {
+    "front": "The maximum height you can fly AGL or above a taller building within a 400-foot radius.",
+    "back": "400 feet"
+  },
+  {
+    "front": "Fastest you can fly.",
+    "back": "100 MPH/87 Knots"
+  },
+  {
+    "front": "The lightest drone that must be registered.",
+    "back": "0.55 lbs"
+  },
+  {
+    "front": "Heaviest legal drone",
+    "back": "55 lbs"
+  },
+  {
+    "front": "Maximum blood alcohol level.",
+    "back": "0"
+  },
+  {
+    "front": "The time that must pass since you have had alcohol.",
+    "back": "8 hours"
+  },
+  {
+    "front": "The maximum time you can take to file an FAA accident report.",
+    "back": "10 days."
+  },
+  {
+    "front": "The time you have to notify the FAA if you move.",
+    "back": "30 days"
+  },
+  {
+    "front": "The lead time required when requesting an FAA waiver",
+    "back": "90 days"
+  },
+  {
+    "front": "Time that must pass after a final narcotics conviction.",
+    "back": "1 year."
+  },
+  {
+    "front": "The youngest person who can register a drone.",
+    "back": "13 years old."
+  },
+  {
+    "front": "How long this certification is good for.",
+    "back": "24 months."
+  },
+  {
+    "front": "The twilight time before sunrise or after sunset when you can still fly.",
+    "back": "30 minutes."
+  },
+  {
+    "front": "The distance your anti-collision lights must be visible from when flying during twilight. Also the minimum visibility you must have while flying.",
+    "back": "3 statute miles."
+  },
+  {
+    "front": "Minimum number of feet below a cloud you must fly.",
+    "back": "500 feet."
+  },
+  {
+    "front": "Minimum number of feet horizontally from a cloud you must fly.",
+    "back": "2,000 feet."
+  },
+  {
+    "front": "The repair cost of accident damage that requires you to report an accident to the FAA",
+    "back": "$500"
+  },
+  {
+    "front": "The \"serious injury\" AIS level that requires you to file an accident report.",
+    "back": "Level 3."
+  },
+  {
+    "front": "The MULTICOM frequency for self-announce procedures.",
+    "back": "122"
+  },
+  {
+    "front": "The distance you should operate from a tower to avoid hitting guy wires.",
+    "back": "2000 feet."
+  },
+  {
+    "front": "Occurs when the wing exceeds its critical angle of attack.",
+    "back": "Stalls"
+  },
+  {
+    "front": "Supposed to be defined in the Pilot's Operating Handbook or UAS Flight Manual",
+    "back": "but those don't exist for drones.,Center of Gravity (CG) Limits."
+  },
+  {
+    "front": "Determines when the craft stalls. This doesn't change if the vehicle weight changes.",
+    "back": "Angle of attack"
+  },
+  {
+    "front": "Increases during any maneuver.",
+    "back": "Load Factor"
+  },
+  {
+    "front": "This is the answer to any question about who is responsible.",
+    "back": "Remote PIC."
+  },
+  {
+    "front": "Aircraft always turn left when circling a runway",
+    "back": "because drivers sit on the left side of the car in the US, and pilots sit on the left of the plane, too. It's easier for them to look out the left window to see the tower.,Left"
+  },
+  {
+    "front": "You're supposed to have one",
+    "back": "even though most drones can't be user-repaired and don't provide a schedule.,Maintenance schedule."
+  },
+  {
+    "front": "Helps to prevent an accident chain.",
+    "back": "Risk Management."
+  },
+  {
+    "front": "Taking risks to impress others",
+    "back": "Machismo"
+  },
+  {
+    "front": "Doing something without thinking about it.",
+    "back": "Impulsivity."
+  },
+  {
+    "front": "Thinking accidents won't happen to you.",
+    "back": "Invulnerability."
+  },
+  {
+    "front": "What's the use? They don't control their destiny.",
+    "back": "Resignation"
+  },
+  {
+    "front": "Nobody can tell me what to do.",
+    "back": "Anti-authority"
+  },
+  {
+    "front": "should integrate it into all phases of the operation.",
+    "back": "Crew Resource Management (CRM)"
+  },
+  {
+    "front": "That's how you should scan for traffic-let your eyes rest in different areas for a while",
+    "back": "rather than continuously scanning.,Systematically focus on different segments of the sky for short intervals."
+  },
+  {
+    "front": "is like climbing a ladder (north-south)",
+    "back": "Latitude"
+  },
+  {
+    "front": "is the long way around the planet (the Earth is fat cuz it spins).",
+    "back": "Longitude"
+  },
+  {
+    "front": "Contains the weather forecast.",
+    "back": "Standard briefing"
+  },
+  {
+    "front": "is weather",
+    "back": "AWOS"
+  },
+  {
+    "front": "is for pilots to talk to each other when there's no tower.",
+    "back": "CTAF"
+  },
+  {
+    "front": "is a base station that broadcasts to pilots when there's no tower.",
+    "back": "UNICOM"
+  },
+  {
+    "front": "is used as the CTAF when there's no CTAF (122.9 or 122.95).",
+    "back": "MULTICOM"
+  },
+  {
+    "front": "Warm air on top of cold air. Fog",
+    "back": "haze, low clouds, poor visibility, but smooth air.,Temperature inversion"
+  },
+  {
+    "front": "Turbulence (because the air is unstable)",
+    "back": "showery precipitation.,Moist, unstable air"
+  },
+  {
+    "front": "Smooth air",
+    "back": "poor visibility, and steady (not showery) precipitation (because stable air is usually humid).,Stable air"
+  },
+  {
+    "front": "Intermittent precipitation.",
+    "back": "Unstable air."
+  },
+  {
+    "front": "Stable",
+    "back": "Cool + Dry"
+  },
+  {
+    "front": "Unstable",
+    "back": "Hot + Humid"
+  },
+  {
+    "front": "Just means \"high altitude\". Air is thinner",
+    "back": "so lift is decreased.,High density altitude."
+  },
+  {
+    "front": "Means a rain cloud",
+    "back": "nimbus"
+  },
+  {
+    "front": "compass heading (180). The last two #s are the wind speed (04).",
+    "back": "18004KT"
+  },
+  {
+    "front": "Compass headings are always relative to true North in print",
+    "back": "not magnetic North."
+  },
+  {
+    "front": "If it's in print",
+    "back": "it must be true.,"
+  },
+  {
+    "front": "Sky is overcast at 700 feet. Remember",
+    "back": "#s are always in hundreds.,OVC007"
+  },
+  {
+    "front": "Visibility is 1 1⁄2 statute miles (SM)",
+    "back": "1 1/2SM"
+  },
+  {
+    "front": "BLPY",
+    "back": "Blowing spray"
+  },
+  {
+    "front": "BR",
+    "back": "Mist"
+  },
+  {
+    "front": "DS",
+    "back": "Dust Storm"
+  },
+  {
+    "front": "DU",
+    "back": "Widespread Dust"
+  },
+  {
+    "front": "DZ",
+    "back": "Drizzle"
+  },
+  {
+    "front": "FC",
+    "back": "Funnel Cloud"
+  },
+  {
+    "front": "+FC",
+    "back": "Tornado/Water Spout"
+  },
+  {
+    "front": "FG",
+    "back": "Fog"
+  },
+  {
+    "front": "FU",
+    "back": "Smoke"
+  },
+  {
+    "front": "GR",
+    "back": "Hail"
+  },
+  {
+    "front": "GS",
+    "back": "Small Hail/Snow Pellets"
+  },
+  {
+    "front": "HZ",
+    "back": "Haze"
+  },
+  {
+    "front": "IC",
+    "back": "Ice Crystals"
+  },
+  {
+    "front": "PL",
+    "back": "Ice Pellets"
+  },
+  {
+    "front": "PO",
+    "back": "Dust/Sand Whirls"
+  },
+  {
+    "front": "RA",
+    "back": "Rain"
+  },
+  {
+    "front": "SA",
+    "back": "Sand"
+  },
+  {
+    "front": "SG",
+    "back": "Snow Grains"
+  },
+  {
+    "front": "SN",
+    "back": "Snow"
+  },
+  {
+    "front": "SQ",
+    "back": "Squall"
+  },
+  {
+    "front": "SS",
+    "back": "Sandstorm"
+  },
+  {
+    "front": "UP",
+    "back": "Unknown Precipitation"
+  },
+  {
+    "front": "VA",
+    "back": "Volcanic Ash"
+  },
+  {
+    "front": "+",
+    "back": "heavy"
+  },
+  {
+    "front": "-",
+    "back": "light"
+  },
+  {
+    "front": "(Common Traffic Advisory Frequency) is marked with a C",
+    "back": "CTAF"
+  },
+  {
+    "front": "is for the weather",
+    "back": "AWOS"
+  },
+  {
+    "front": "mark VR checkpoints which mean more planes might be there.",
+    "back": "Red flags"
+  },
+  {
+    "front": "Measure minutes between latitude and longitude degrees. Each tick is one minute. Bigger ticks mark 5 minutes.",
+    "back": "Tick marks."
+  },
+  {
+    "front": "Must get ATC (Air Traffic Control) authorization for class B",
+    "back": "C, and D.,"
+  },
+  {
+    "front": "From 18",
+    "back": "000 feet to 60,000 feet, all over the US.,Class A airspace"
+  },
+  {
+    "front": "Surrounding major airports",
+    "back": "0-10,000 feet. Consists of multiple layers,"
+  },
+  {
+    "front": "like an upside-down wedding cake.",
+    "back": "Class B airspace"
+  },
+  {
+    "front": "Surrounding airports with a control tower",
+    "back": "radar, and over a specific amount of traffic. Usually 5 NM (nautical mile) radius from 0-4,000 feet, and a 10 NM radius from 1,200-4,000 feet.,Class C airspace"
+  },
+  {
+    "front": "Surrounding airports with a control tower. 0-2",
+    "back": "500 feet, no specific radius, just shaped around flight patterns. Outside control tower hours, Class D airspace is Class G.,Class D airspace"
+  },
+  {
+    "front": "Usually it starts at 1",
+    "back": "200 feet and goes up to 18,000 feet.,Class E airspace"
+  },
+  {
+    "front": "Uncontrolled airspace (below class E airspace).",
+    "back": "Class G airspace"
+  },
+  {
+    "front": "Places like Camp David and the White House.",
+    "back": "Prohibited Areas (P-###)"
+  },
+  {
+    "front": "It's not prohibited",
+    "back": "but if you fly here, it could be dangerous. The government might be testing artillery or missiles or UFOs.,Restricted Areas (R-###)"
+  },
+  {
+    "front": "Domestic and international waters",
+    "back": "from NM outward from the US coast. It's cool to fly there it's just not really managed by the US.,Warning Areas (W-###)"
+  },
+  {
+    "front": "MOAs consist of airspace with defined limits established for the purpose of separating certain military training activities from IFR traffic. Whenever an MOA is being used",
+    "back": "nonparticipating IFR traffic may be cleared through an MOA if IFR separation can be provided by ATC. Otherwise, ATC reroutes or restricts nonparticipating IFR traffic.,Military Operations Areas (MOAs)"
+  },
+  {
+    "front": "Depicted on aeronautical charts with an \"A\" followed by a number (e.g.",
+    "back": "A-"
+  },
+  {
+    "front": "211) to inform nonparticipating pilots of areas that may contain a high volume of pilot training or an unusual type of aerial activity. Think skydiving training facility",
+    "back": "Alert Areas"
+  },
+  {
+    "front": "Numbers (like 41/12) are written in 100s of feet above sea level (MSL). So",
+    "back": "41/12 means 4100 ft, 1200 ft. SFC = Surface,"
+  },
+  {
+    "front": "latitude",
+    "back": "north and south"
+  },
+  {
+    "front": "longitude",
+    "back": "east to west"
+  },
+  {
+    "front": "Advisory Circulars",
+    "back": "AC"
+  },
+  {
+    "front": "Aeronautical Decision Making",
+    "back": "ADM"
+  },
+  {
+    "front": "Aircraft Flight Manual",
+    "back": "AFM"
+  },
+  {
+    "front": "Above Ground Level",
+    "back": "AGL"
+  },
+  {
+    "front": "Aeronautical information manual",
+    "back": "AIM"
+  },
+  {
+    "front": "Abbreviated Injury Scale",
+    "back": "AIS"
+  },
+  {
+    "front": "Above Sea Level",
+    "back": "ASL"
+  },
+  {
+    "front": "weather)",
+    "back": "ASOS"
+  },
+  {
+    "front": "Air Traffic Control",
+    "back": "ATC"
+  },
+  {
+    "front": "Air Traffic Control Tower",
+    "back": "ATCT"
+  },
+  {
+    "front": "Automatic Terminal Information System (a loop of useful information broadcast over the radio near an airport)",
+    "back": "ATIS"
+  },
+  {
+    "front": "Aviation Weather Center",
+    "back": "AWC"
+  },
+  {
+    "front": "Observing System",
+    "back": "AWOS"
+  },
+  {
+    "front": "Code of Federal Regulations",
+    "back": "CFR"
+  },
+  {
+    "front": "Center of Gravity",
+    "back": "CG"
+  },
+  {
+    "front": "Certificate of Waiver",
+    "back": "CoW"
+  },
+  {
+    "front": "Crew Resource Management",
+    "back": "CRM"
+  },
+  {
+    "front": "control)",
+    "back": "CS"
+  },
+  {
+    "front": "Frequency",
+    "back": "CTAF"
+  },
+  {
+    "front": "Administration",
+    "back": "FAA"
+  },
+  {
+    "front": "Flight Data Center",
+    "back": "FDC"
+  },
+  {
+    "front": "Information Publication",
+    "back": "FLIP"
+  },
+  {
+    "front": "Flight Level",
+    "back": "FL"
+  },
+  {
+    "front": "Provides pilot briefings",
+    "back": "enroute communications, search-and-rescue services, help lost aircraft, etc.,FSS"
+  },
+  {
+    "front": "Flight Termination Point",
+    "back": "FTP"
+  },
+  {
+    "front": "Instrument Flight Rules",
+    "back": "IFR"
+  },
+  {
+    "front": "Instrument Landing System",
+    "back": "ILS"
+  },
+  {
+    "front": "Letter of Agreement",
+    "back": "LOA"
+  },
+  {
+    "front": "Reports",
+    "back": "METAR"
+  },
+  {
+    "front": "Military Operations Area",
+    "back": "MOA"
+  },
+  {
+    "front": "Mean Sea Level",
+    "back": "MSL"
+  },
+  {
+    "front": "Military Training Routes",
+    "back": "MTR"
+  },
+  {
+    "front": "Not an acronym",
+    "back": "just"
+  },
+  {
+    "front": "to announce aircraft when there's no ATC.",
+    "back": "MULTICOM"
+  },
+  {
+    "front": "National Airspace System",
+    "back": "NAS"
+  },
+  {
+    "front": "Nautical Miles",
+    "back": "NM"
+  },
+  {
+    "front": "Notice to Airman",
+    "back": "NOTAM"
+  },
+  {
+    "front": "Notice to Airman Publication",
+    "back": "NTAP"
+  },
+  {
+    "front": "Safety Board",
+    "back": "NTSB"
+  },
+  {
+    "front": "National Weather Service",
+    "back": "NWS"
+  },
+  {
+    "front": "Overcast (from METAR)",
+    "back": "OVC"
+  },
+  {
+    "front": "Pilot In Control. You",
+    "back": "flying the"
+  },
+  {
+    "front": "drone.",
+    "back": "PIC"
+  },
+  {
+    "front": "Pilot Operating Handbook",
+    "back": "POH"
+  },
+  {
+    "front": "Rain",
+    "back": "RA"
+  },
+  {
+    "front": "Surface",
+    "back": "SFC"
+  },
+  {
+    "front": "you need to be wearing a badge.",
+    "back": "SIDA"
+  },
+  {
+    "front": "Statute Miles",
+    "back": "SM"
+  },
+  {
+    "front": "Safety Management System",
+    "back": "SMS"
+  },
+  {
+    "front": "Systems (aka.",
+    "back": "drone, UA, UAS),sUAS"
+  },
+  {
+    "front": "Terminal Aerodrome Forecast",
+    "back": "TAF"
+  },
+  {
+    "front": "Temporary Flight Restriction",
+    "back": "TFR"
+  },
+  {
+    "front": "Unmanned Aircraft (aka.",
+    "back": "drone,"
+  },
+  {
+    "front": "sUAS",
+    "back": "UAS),UA"
+  },
+  {
+    "front": "(aka.",
+    "back": "drone, sUAS, UA),UAS"
+  },
+  {
+    "front": "Universal Communications. A radio broadcast that tells you about non- flight services",
+    "back": "such as fuel, taxis, and car rentals.,UNICOM"
+  },
+  {
+    "front": "Visual Flight Rules",
+    "back": "VFR"
+  },
+  {
+    "front": "Visual Line-of-Sight",
+    "back": "VLOS"
+  },
+  {
+    "front": "Visual Observer",
+    "back": "VO"
+  },
+  {
+    "front": "navigation beacons.",
+    "back": "VOR"
+  },
+  {
+    "front": "Training Routes",
+    "back": "VR"
+  },
+  {
+    "front": "A",
+    "back": "Alpha"
+  },
+  {
+    "front": "B",
+    "back": "Bravo"
+  },
+  {
+    "front": "C",
+    "back": "Charlie"
+  },
+  {
+    "front": "D",
+    "back": "Delta"
+  },
+  {
+    "front": "E",
+    "back": "Echo"
+  },
+  {
+    "front": "F",
+    "back": "Foxtrot"
+  },
+  {
+    "front": "G",
+    "back": "Golf"
+  },
+  {
+    "front": "H",
+    "back": "Hotel"
+  },
+  {
+    "front": "I",
+    "back": "India"
+  },
+  {
+    "front": "J",
+    "back": "Juliett"
+  },
+  {
+    "front": "K",
+    "back": "Kilo"
+  },
+  {
+    "front": "L",
+    "back": "Lima"
+  },
+  {
+    "front": "M",
+    "back": "Mike"
+  },
+  {
+    "front": "N",
+    "back": "November"
+  },
+  {
+    "front": "O",
+    "back": "Oscar"
+  },
+  {
+    "front": "P",
+    "back": "Papa"
+  },
+  {
+    "front": "Q",
+    "back": "Quebec"
+  },
+  {
+    "front": "R",
+    "back": "Romeo"
+  },
+  {
+    "front": "S",
+    "back": "Seirra"
+  },
+  {
+    "front": "T",
+    "back": "Tango"
+  },
+  {
+    "front": "U",
+    "back": "Uniform"
+  },
+  {
+    "front": "V",
+    "back": "Victor"
+  },
+  {
+    "front": "W",
+    "back": "Whisky"
+  },
+  {
+    "front": "X",
+    "back": "Xray"
+  },
+  {
+    "front": "Y",
+    "back": "Yankee"
+  },
+  {
+    "front": "Z",
+    "back": "Zulu"
+  },
+  {
+    "front": "Small tick marks",
+    "back": "1 minute"
+  },
+  {
+    "front": "medium tick marks",
+    "back": "5 minutes"
+  },
+  {
+    "front": "large tick marks",
+    "back": "10 minutes"
+  },
+  {
+    "front": "KGGG",
+    "back": "K then three letter airport code"
+  },
+  {
+    "front": "161753Z",
+    "back": "16 day of the month 1753 the time of day and Z-Zulu"
+  },
+  {
+    "front": "AUTO",
+    "back": "automatic made report by a weather station"
+  },
+  {
+    "front": "14021G26KT",
+    "back": "140 degrees 21 knots gusting to 26 knots"
+  },
+  {
+    "front": "VRB05KT",
+    "back": "Variable winds at 5 knots"
+  },
+  {
+    "front": "+TSRA BR",
+    "back": "heavy thunderstorm and rain showers and mist"
+  },
+  {
+    "front": "BKN008",
+    "back": "Broken clouds at 800 feet"
+  },
+  {
+    "front": "OVC012CB",
+    "back": "overcast clouds at 1,200 feet Cumulus clouds"
+  },
+  {
+    "front": "18/17",
+    "back": "18 degrees celsius and dew point is 17 degrees celsius"
+  },
+  {
+    "front": "P6SM",
+    "back": "P if it is 6 or more and indicates that you have great visibility"
+  },
+  {
+    "front": "PROB30",
+    "back": "30% chance"
+  },
+  {
+    "front": "Less than 1/8 (Clear)",
+    "back": "SKC,CLR,FEW"
+  },
+  {
+    "front": "1/8-2/8 (Few)",
+    "back": "FEW"
+  },
+  {
+    "front": "3/8-4/8 (Scattered)",
+    "back": "SCT"
+  },
+  {
+    "front": "5/8-7/8 (Broken)",
+    "back": "BKN"
+  },
+  {
+    "front": "8/8 or (Overcast)",
+    "back": "OVC"
+  },
+  {
+    "front": "Low density altitude",
+    "back": "have higher density of air"
+  },
+  {
+    "front": "High density altitude",
+    "back": "have lower density of air"
+  },
+  {
+    "front": "Fronts",
+    "back": "divide weather patterns"
+  },
+  {
+    "front": "Wind shear",
+    "back": "any altitude"
+  },
+  {
+    "front": "Structural icing",
+    "back": "rain or cloud 0 degrees celsius or colder"
+  },
+  {
+    "front": "0 degrees",
+    "back": "North"
+  },
+  {
+    "front": "90 degrees",
+    "back": "East"
+  },
+  {
+    "front": "180 degrees",
+    "back": "South"
+  },
+  {
+    "front": "270 degrees",
+    "back": "West"
+  },
+  {
+    "front": "TS(thunderstorm) Life Cycle",
+    "back": "1. Cumulus"
+  },
+  {
+    "front": "To check NOTAM go to",
+    "back": "1800WXBrief.com"
+  },
+  {
+    "front": "Nimbus",
+    "back": "Big heavy clouds"
+  },
+  {
+    "front": "Stratus",
+    "back": "High whispy clouds"
+  },
+  {
+    "front": "Humidity",
+    "back": "Less visibility more efficient"
+  }
+]

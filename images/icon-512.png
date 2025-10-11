@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#6366f1" rx="80"/>
+  <g fill="#ffffff">
+    <!-- Book/Card icon -->
+    <rect x="128" y="128" width="256" height="256" rx="20" fill="none" stroke="#ffffff" stroke-width="16"/>
+    <line x1="256" y1="128" x2="256" y2="384" stroke="#ffffff" stroke-width="16"/>
+    <circle cx="200" cy="230" r="20" fill="#ffffff"/>
+    <circle cx="200" cy="282" r="20" fill="#ffffff"/>
+    <circle cx="312" cy="230" r="20" fill="#ffffff"/>
+    <circle cx="312" cy="282" r="20" fill="#ffffff"/>
+  </g>
+</svg>

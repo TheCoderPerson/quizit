@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuizIt - Create Study Set">
+    <meta name="theme-color" content="#6366f1">
+    <title>QuizIt - Create Set</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/create.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <a href="index.html" class="back-btn">← Back</a>
+                <h1 id="pageTitle" class="page-title">Create Study Set</h1>
+                <button id="themeToggle" class="icon-btn" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="create-container">
+            <div class="create-wrapper">
+                <!-- Set Info Section -->
+                <section class="set-info-section">
+                    <div class="form-group">
+                        <label for="setTitle" class="form-label">Title</label>
+                        <input
+                            type="text"
+                            id="setTitle"
+                            class="form-input"
+                            placeholder="Enter a title, like 'Biology - Chapter 1'"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="setDescription" class="form-label">Description (optional)</label>
+                        <textarea
+                            id="setDescription"
+                            class="form-textarea"
+                            placeholder="Add a description..."
+                            rows="2"
+                        ></textarea>
+                    </div>
+                </section>
+
+                <!-- Cards Section -->
+                <section class="cards-section">
+                    <div class="cards-header">
+                        <h2>Cards</h2>
+                        <div class="cards-actions">
+                            <button id="importBtn" class="btn btn-secondary">📥 Import</button>
+                            <button id="exportBtn" class="btn btn-secondary">📤 Export</button>
+                            <button id="addCardBtn" class="btn btn-primary">+ Add Card</button>
+                        </div>
+                    </div>
+
+                    <div id="cardsContainer" class="cards-container">
+                        <!-- Cards will be dynamically added here -->
+                    </div>
+                </section>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                    <button id="saveBtn" class="btn btn-primary">Save Set</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Card Template -->
+    <template id="cardTemplate">
+        <div class="card-editor" data-card-index="">
+            <div class="card-number-wrapper">
+                <span class="card-number"></span>
+            </div>
+            <div class="card-editor-main">
+                <div class="card-editor-header">
+                    <button class="delete-card-btn icon-btn" title="Delete card">🗑️</button>
+                </div>
+                <div class="card-editor-columns">
+                    <div class="card-column">
+                        <label class="card-column-label">TERM</label>
+                        <textarea
+                            class="card-textarea term-input"
+                            placeholder="Enter term"
+                            rows="2"
+                        ></textarea>
+                        <div class="card-image-section">
+                            <input type="file" class="card-image-input" accept="image/*" style="display: none;">
+                            <button class="card-image-btn">
+                                <span class="image-icon">🖼️</span>
+                                <span class="image-text">Image</span>
+                            </button>
+                            <div class="card-image-preview" style="display: none;">
+                                <img class="preview-img" src="" alt="Card image">
+                                <button class="remove-image-btn" title="Remove image">✕</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-column">
+                        <label class="card-column-label">DEFINITION</label>
+                        <textarea
+                            class="card-textarea definition-input"
+                            placeholder="Enter definition"
+                            rows="2"
+                        ></textarea>
+                        <div class="card-image-section">
+                            <input type="file" class="card-image-input-def" accept="image/*" style="display: none;">
+                            <button class="card-image-btn-def">
+                                <span class="image-icon">🖼️</span>
+                                <span class="image-text">Image</span>
+                            </button>
+                            <div class="card-image-preview-def" style="display: none;">
+                                <img class="preview-img-def" src="" alt="Card image">
+                                <button class="remove-image-btn-def" title="Remove image">✕</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Import Modal -->
+    <div id="importModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Import Cards</h2>
+            <p>Select a JSON or CSV file, or paste JSON data below:</p>
+            <div style="margin-bottom: 1rem;">
+                <input type="file" id="importFile" accept=".json,.csv" style="display: none;">
+                <button onclick="document.getElementById('importFile').click()" class="btn btn-secondary" style="width: 100%;">
+                    📁 Choose File (JSON or CSV)
+                </button>
+            </div>
+            <p style="font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: var(--spacing-sm);">
+                CSV format: term,definition (one per line)
+            </p>
+            <textarea id="importText" class="import-textarea" rows="10" placeholder='JSON Format:
+[
+  {"front": "Term 1", "back": "Definition 1"},
+  {"front": "Term 2", "back": "Definition 2"}
+]
+
+CSV Format:
+Term 1,Definition 1
+Term 2,Definition 2'></textarea>
+            <div class="modal-actions">
+                <button id="cancelImport" class="btn btn-secondary">Cancel</button>
+                <button id="confirmImport" class="btn btn-primary">Import</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Modal -->
+    <div id="exportModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Export Cards</h2>
+            <p>Download as file or copy the JSON below:</p>
+            <textarea id="exportText" class="export-textarea" rows="10" readonly></textarea>
+            <div class="modal-actions">
+                <button id="closeExport" class="btn btn-secondary">Close</button>
+                <button id="downloadExport" class="btn btn-primary">💾 Download File</button>
+                <button id="copyExport" class="btn btn-secondary">📋 Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/card-set-manager.js"></script>
+</body>
+</html>

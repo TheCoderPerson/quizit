@@ -1,0 +1,356 @@
+﻿728’s Unofficial Land Navigation Test Study Guide
+See also Land Navigation Academy Class Slides
+
+
+1.0 - Declination
+Understand what declination is and be able to define it. Understand how to convert between Magnetic and True north and where to apply it.
+
+
+* Class video:  True North, Magnetic North, Grid North; Magnetic Declination.
+* Difference between Magnetic North and True North (in degrees). El Dorado County is 13°.
+* Convert Magnetic to True - Compass to Map Add (turn bezel to the right to add 13°)
+* Convert True to Magnetic - Map to Compass Subtract (turn bezel to the left to minus 13°)
+* Don’t just do the math in your head, especially when 0° is near the index.
+* “Magnetic North” - direction a magnetized compass needle points as it aligns to Earth’s magnetic field
+* “True North” - direction of shortest distance between anyplace on the earth’s surface and “North Pole”
+
+
+2.0 - Map datum
+The searcher shall understand what a datum is and its uses in navigation. The searcher will demonstrate changing datums. 
+
+
+* Datum - A 3D “model” of the earth based on thousands of benchmark measurements (physical reference points against other maps points that are surveyed)
+* 3 options, we use WSG-84
+   * NAD-27: North American Datum of 1927 (United States Geodetic Survey - USGS)
+   * NAD-83: North American Datum of 1983
+   * WGS-84: World Geodetic Survey of 1984
+
+
+3.0 - UTM system
+What is the UTM system and how is the UTM system used in SAR. 
+
+
+* UTM is a 2D coordinate grid system dividing the earth into meters, map distance major grid is 1k
+* Easting - West to East (60 Zones)
+   * Zone 1 starts at 180 West of Longitude (Greenwich, England)
+   * Zone 60 ends at 180 East of Longitude
+* Northing - South to North (24 letters, A-Z no I, O) 
+   * Equator is O (not shown on map)
+   * A and B reserved for South pole, Y and Z reserved for North pole
+* California in zones 10S, 10T, 11S
+* Read Zone, Easting, Northing (read Right then Up)
+
+
+________________
+4.0 - Orienting map
+The searcher will be expected to be able to orient a map to the terrain using a compass. 
+
+
+Class video: SMCT: Orient a Map Using a Lensatic Compass.
+Alternative quick video: Wilderness Navigation Skills- Orientating a Map with a Compass.
+* Methodical Method
+   1. Orient the map to the terrain (check that the bottom map symbol is facing up). 
+   2. Set the compass bezel to 0°.
+   3. Align the compass edge to a map grid line.
+   4. (Magnetic North) Rotate the map until red is in the shed.
+   5. (True North) Turn the bezel right to add 13° (347°), rotate map, red in the shed.
+* Shortcut:
+   1. (True North) Bezel to 347° > align compass edge to map grid line, rotate map, red in the shed.
+
+
+5.0 - Map terrain features 
+The searcher will be expected to be familiar with the features of topo maps. The searcher will be asked to identify three (3) terrain features on a map chosen by the Evaluator. 
+
+
+Class videos: Major Terrain Features on a Hand, Contours & Elevation, Contours & Terrain
+* Major features (“Hidden Valley Ranch Salad Dressing” video)
+   * Hills - ground goes down in all directions
+   * Valleys - ground goes up in 3, down in one
+   * Ridgelines - ground goes down in 3, up in 1
+   * Saddles - connects two mountains, contour lines can bend inward
+   * Depressions - low spot, ground goes up in all directions
+* Minor features
+   * Spur - (fingers) juts off from ridgeline (runny egg, contour lines go down)
+   * Draw - (btw fingers), formed by runoff and forms spurs (creeks flow down, contour lines go up)
+   * Cliff - contour lines are really close together, very steep
+   * Cut - looks like a zipper
+
+
+Hints on what to look for to identify terrain features:
+* Hills/Mountains: concentric circles, elevation increase. Summit - innermost loop, sometimes has “X”. 
+* Valleys/Draws: “V” or “U” shaped lines that point uphill (shaped by water flowing down).
+* Ridges/Spurs: opposite of valleys, “V” or “U” shaped lines that point downhill. Often connects peaks.
+* Saddles/Passes: between two concentric circles (peaks), can be hourglass shaped.
+* Depressions: circle with tick marks on the inside indicating elevation decrease towards the center.
+
+
+  
+
+
+
+  
+
+	  
+
+	  
+
+	  
+
+	  
+
+	6.0 - Map symbols 
+The searcher will be expected to be familiar with the meaning of map symbols used to interpret a topo map. The searcher will identify five (5) symbols chosen by the Evaluator. 
+
+
+Study this USGS Top Map Symbols for the full list and not just the screenshot below!
+* Blue = water
+* Green = vegetation
+* Brown = contour lines
+* Red = roads (can also be in black, can be dotted)
+* Black = man-made object
+
+
+  
+
+
+
+7.0 - Calibrating GPS compass
+The searcher will demonstrate how to calibrate the compass in their GPS. 
+
+
+* Garmin 64s:
+   * [PAGE] > scroll to Compass > [MENU] > Calibrate Compass > Start > follow screen instructions
+* Smartphone
+   * Google Maps > tap your blue dot > Calibrate > follow screen directions
+
+
+8.0 - Latitude/Longitude
+The searcher will be expected to understand Latitude and Longitude and its use in SAR. The searcher will be asked to demonstrate changing the position format from UTM to Lat/Long on the GPS. 
+
+
+* Class videos - Latitude and Longitude, How to read Latitude and Longitude Coordinates.
+* Traditionally, Earth divided in circles or 360 degrees (still a sphere), 60 min per degree, 60 secs per min
+* Today, users divide degrees or minutes in 10th, 100th, and 1000ths
+   * Referred to as “decimal degrees” or “decimal minutes”
+* Reference is Equator and 0 degrees in Greenwich England
+* 3 different formats (which one is used by EDSAR)
+   * DDD° MM’ SS.S” - degrees, min, sec
+   * DDD° DDDDD° - degrees, decimal degrees
+   * DDD° MM.MMM’ - degrees, minutes, decimal minutes - used by EDSAR
+* Lat/long is used in EDSAR (Air Control, SLT)
+* Read South then North (latitude), then read East to West (longitude)
+
+
+9.0 - Clearing active track
+The searcher will demonstrate how to clear the active track in their GPS.
+
+
+* Garmin 64s: (see video)
+   * [Menu 2x] > Track Manager > Current Track > Clear Current Track 
+* CalTopo
+   * Tap    at the bottom > TRACK DETAILS > if you see Finish then tap Finish > Discard
+
+
+10.0 - Point to point navigation using a GPS
+The searcher will be given a set of coordinates and enter them into their GPS. The searcher will navigate to the coordinates using their GPS.
+
+
+   * Garmin 64s: 
+   * [FIND] > Waypoints > choose waypoint > [GO]
+   * CalTopo
+   * Tap    at the top > tap desired marker > click “Navigate To”
+
+
+11.0 - Navigating with a compass
+The searcher will be given a bearing and navigate to a landmark not readily visible using a compass. 
+
+
+      1. Rotate compass bezel until the bearing is at the index, put red is in the shed
+      2. Go around any obstacles at 90° turns, calculate the math for the bearings on paper first
+      1. If you need to turn right -> ASSA
+      * 1) add 90°, 2) subtract 90°, 3) subtract 90°, 4) add 90° (original bearing)
+      2. If you need to turn left -> SAAS
+      * 1) subtract 90°, 2) add 90°, 3) add 90°, 4) subtract 90° (original bearing)
+      3. Start moving:
+      1. put red in the shed each time you change the bearing 
+      2. count your paces when moving perpendicular to the original direction of travel, write your pace count on paper
+  
+
+
+
+12.0 - Plotting UTM coordinates on a map 
+The searcher will be given UTM coordinates and will plot the location on a map. 
+
+
+      * See video
+      * Read right for Easting, then up for Northing
+      * Each map square is 1 km, use reader to pinpoint last 3 digits
+      * If the reader scale doesn’t fit map square, diagonally angle reader on a map square until 0 and 10 touches map square borders, make tick marks on map based on grid square lines, draw out Easting and Northing lines to pinpoint last 3 digits
+
+
+13.0 - Plotting Lat/Long coordinates on a map 
+The searcher will be given Lat/Long coordinates and will plot the location on a map. 
+
+
+      * See video, calc using a ruler article
+      * Lat/long coordinates on the map will usually have black tick marks.
+      * Read South to North (Lat), then East to West (Long) to isolate the intersecting area.
+      * Then use a ruler to divide further to isolate the exact coordinates.
+
+
+14.0 - Route finding 
+The searcher will be given a starting and end location on the map. The searcher must plan a safe and reasonable route from point to point. 
+
+
+      * Re-review class videos: Contours & Elevation, Contours & Terrain
+      * Consider maps symbols and look for navigable paths like roads, trails
+      * Consider size, shape, slope, orientation, elevation change, terrain
+
+
+15.0 - Proximity alarm
+The searcher will create a proximity alarm for waypoint “FT2” with a radius of 50’ or 0.01 miles.
+
+
+      * Garmin 64s: 
+      * [Menu 2x] > Proximity Alarms > Create Alarm > Waypoints > select waypoint > enter radius
+      * CalTopo
+      * Tap    at the top > pick waypoint > tap    at the top > Range Ring > enter miles > Create
+
+
+16.0 - GPS waypoint
+The searcher will be asked to mark a waypoint using coordinates given verbally by the Evaluator and name it “FT2”.
+
+
+         * Garmin 64s:
+         * [MARK] > arrow into fields to enter the name and location coords >  Done
+         * CalTopo
+         * Tap    at the bottom > MARKER AT GPS > label and enter coords > [OK]
+
+
+17.0 - Magnetic compass bearing
+The Evaluator will choose an object in the distance and the searcher will be asked to give the correct magnetic bearing. 
+
+
+            1. Point the compass at the object.
+            2. Rotate the bezel until red is in the shed.
+
+
+18.0 - Identify a bearing
+The searcher will be given a bearing and shall identify the object on that bearing. 
+
+
+            1. Rotate the bezel until the bearing is at the compass index.
+            2. Turn your body until red is in the shed.
+
+
+19.0 - Converting between Magnetic and True north
+The searcher will be given a Magnetic north bearing and be able to convert it to True north. The searcher will be given a different True north bearing and convert it to Magnetic north. 
+
+
+            1. Compass to Map Add (+13° for EDC)
+            2. Map to Compass Subtract (-13° for EDC)
+
+
+20.0 - Plotting a bearing 
+The searcher will be given a starting location on the map and be asked to plot a True bearing chosen by the Evaluator. 
+
+
+See video
+            1. Draw a line between 2 points on the map.
+            2. Place the compass edge on the drawn line so the direction of travel points to where you are going.
+            3. Rotate the bezel so orienting lines inside the bezel are aligned with the map grid lines.
+            4. (True North) Read the bearing at the index (compass N/orienting arrow should be pointing to map’s N).
+            5. (Magnetic North) Before walking, subtract 13°, red in the shed, move in direction of travel arrow.
+
+
+21.0 - Triangulation to find location 
+The searcher will be given two (2) bearings to landmarks on a map and will determine the intersecting location by triangulating. Alternate scenario, the searcher will determine their location by triangulation to two (2) visible landmarks that are also located on a map. 
+
+
+NEEDLE DOESN’T MATTER AND YOU DON’T KNOW YOUR DIRECTION OF TRAVEL.
+
+
+See video
+            1. Orient the map to the terrain landmarks.
+            2. Get both bearings by pointing the compass, red in the shed.
+            3. Convert the bearings to True North (add 13°).
+            4. For each landmark:
+            1. Rotate the bezel to the landmark’s bearing.
+            2. Place the compass corner on top of the landmark (direction of travel points to the landmark).
+            3. Pivot the compass corner until the orienting lines match the map line (needle is not important!).
+            * Use the back azimuth if you're falling off the map when you pivot.
+            4. Make sure the compass bezel N/red orienting arrow is pointing towards the top of the map.
+            5. Draw a long line on the map. The two lines from each landmark should intersect.
+
+
+22.0 - Determine UTM coordinates on a map
+The searcher will determine the UTM coordinates for a location indicated on a map. 
+
+
+(Allowed error of 10m variance for test)
+            1. Zone, Easting, Northing (WSG-84 Datum) (read Right then Up)
+            2. Check if map scale matches between grid reader and map grid, if not then
+            1. Create 10 tick marks on a piece of paper using scale at bottom of map
+            2. Or can try putting grid reader on diagonal until reader edge touches map square
+
+
+23.0 - Communicating GPS position
+The searcher will identify their location using a GPS and communicate that location correctly using a simulated radio to the Evaluator. 
+
+
+            * Garmin 64s: 
+            * [MARK]
+            * Communications
+            * “Command Post, Team 101”
+            * “Ready to relay coordinates, please advise when you are ready to copy.”
+            * “10S….Easting [BREAK]....Northing…WSG-84” (pause) “how copy?”
+
+
+24.0 - Creating a waypoint
+The searcher will save their current location and name it "FT1". 
+
+
+            * Garmin 64s: 
+            * [MARK] 
+            * CalTopo
+            * Tap    at the bottom > MARKER AT GPS
+25.0 - Creating a segment
+The searcher will be provided four (4) UTM coordinates and will create a segment using the route feature in their GPS. 
+
+
+               * Garmin 64s: 
+               * Create each waypoint
+               * [MARK] > arrow into fields to enter the name and location coords >  Done
+               * Create segment
+               * [Menu 2x] > Route Planner > Create Route > Select First Point > Waypoints > select waypoints and remember to include the starting waypoint at the end
+               * CalTopo
+               * Create each waypoint
+               * Tap    at the bottom > MARKER AT GPS > label and enter coords > [OK]
+                  * Create polygon
+                  * Tap    at the top > Polygon > tap each waypoint to create a closed loop > enter a label at the bottom > [OK]
+                     * If you need to better align the polygon to the waypoints
+                     * Tap the polygon name on the map > Edit > drag and drop the polygon points as needed > press [OK when finished
+
+
+26.0 - Saving a GPS track 
+The searcher will be asked to complete a track of the navigation course and save it in the GPS using EDSAR track naming nomenclature. The Searcher will save their track created by completing the Navigation Field Test and name it GPS: (Search ID)(Team#)(Team Type Prefix)(Initials) i.e. FT101FDW, CalTopo: (Team#)(Team Type Prefix)(Initials)
+Team Type Prefix - (F)oot, (M)ounted, (S)wiftwater, A(Incident Support), O(HV), U(AS), (K)9, T(echnical Rope)
+
+
+                     * Garmin 64s: 
+                     * Clear any active track before starting tracking when you reach your assignment
+                     * [Menu 2x] > Track Manager > Current Track > Clear Current Track 
+                     * [Menu 2x] > Setup > Tracks > Track Log > “Record, Show on Map” > [Quit 2x]
+                     * Save track under name before you leave your segment back to CP
+                     * [Menu 2x] > Track Manager > Current Track > Save Track > enter SAR nomenclature
+                     * (skip for test) Stop recording when you leave your segment before heading back to CP
+                     * [Menu 2x] > Setup > Tracks > Track Log > “Do Not Record” > [Quit 2x]
+                     * CalTopo
+                     * Clear any active track before starting tracking when you reach your assignment
+                     * Tap    at the bottom > TRACK DETAILS > if you see Finish then tap Finish > Discard
+                     * Tap    at the bottom > RECORD TRACK > enter track name > Start
+                        * Stop recording track
+                        * Tap    at the bottom > TRACK DETAILS > Finish > Save > enter SAR nomenclature
+
+
+El Dorado Search and Rescue | Confidential | 728’s Unofficial Land Navigation Test Study Guide | v052925  |  Page  of
