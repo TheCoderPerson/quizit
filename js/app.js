@@ -1,6 +1,6 @@
 // Main Application Logic for QuizIt
 import db from './db.js';
-import { getThemePreference, setThemePreference, toggleTheme, formatDate, showToast, debounce, downloadFile } from './utils.js';
+import { getThemePreference, setThemePreference, toggleTheme, formatDate, showToast, debounce, downloadFile, getTestQuestionTypePreference } from './utils.js';
 
 class QuizItApp {
     constructor() {
@@ -19,6 +19,9 @@ class QuizItApp {
 
         // Initialize theme
         setThemePreference(getThemePreference());
+
+        // Initialize test question type preference (ensures default is set)
+        getTestQuestionTypePreference();
 
         // Register service worker
         this.registerServiceWorker();

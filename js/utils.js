@@ -209,6 +209,31 @@ export function toggleTheme() {
 }
 
 /**
+ * Get test question type preference from localStorage
+ * @returns {string} Question type preference ('mc', 'written', or 'mix')
+ */
+export function getTestQuestionTypePreference() {
+    const stored = localStorage.getItem('testQuestionType');
+    const result = stored || 'mix'; // Default to 'mix' for backward compatibility
+    console.log('[DEBUG] getTestQuestionTypePreference() - stored value:', stored, '| returning:', result);
+    return result;
+}
+
+/**
+ * Set test question type preference
+ * @param {string} type - Question type ('mc', 'written', or 'mix')
+ */
+export function setTestQuestionTypePreference(type) {
+    if (!['mc', 'written', 'mix'].includes(type)) {
+        console.error('Invalid test question type:', type);
+        return;
+    }
+    console.log('[DEBUG] setTestQuestionTypePreference() - setting to:', type);
+    localStorage.setItem('testQuestionType', type);
+    console.log('[DEBUG] Verification - localStorage now contains:', localStorage.getItem('testQuestionType'));
+}
+
+/**
  * Escape HTML to prevent XSS
  * @param {string} text - Text to escape
  * @returns {string} Escaped text
