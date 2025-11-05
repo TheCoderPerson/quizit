@@ -1,5 +1,5 @@
 // Service Worker for QuizIt PWA
-const CACHE_NAME = 'quizit-v2';
+const CACHE_NAME = 'quizit-v3';
 const urlsToCache = [
     '/',
     '/index.html',
