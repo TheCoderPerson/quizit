@@ -1,7 +1,7 @@
 // Study Modes Manager - Handles all study modes
 import db from './db.js';
 import SRSAlgorithm from './srs-algorithm.js';
-import { getThemePreference, setThemePreference, toggleTheme, shuffleArray, isAnswerCorrect, formatDuration, getUrlParameter, setUrlParameters } from './utils.js';
+import { getThemePreference, setThemePreference, toggleTheme, shuffleArray, isAnswerCorrect, formatDuration, getUrlParameter, setUrlParameters, getTestQuestionTypePreference } from './utils.js';
 
 class StudyModesManager {
     constructor() {
@@ -386,12 +386,30 @@ class StudyModesManager {
             questionImage.style.display = 'none';
         }
 
-        // Randomly decide between multiple choice or written
-        const useMultipleChoice = Math.random() > 0.3;
+        // Get user's question type preference
+        const questionTypePreference = getTestQuestionTypePreference();
+        console.log('[DEBUG] showTestQuestion() - questionTypePreference:', questionTypePreference);
+
+        let useMultipleChoice;
+        if (questionTypePreference === 'mc') {
+            // All Multiple Choice
+            useMultipleChoice = true;
+            console.log('[DEBUG] Mode: All Multiple Choice - useMultipleChoice = true');
+        } else if (questionTypePreference === 'written') {
+            // All Written
+            useMultipleChoice = false;
+            console.log('[DEBUG] Mode: All Written - useMultipleChoice = false');
+        } else {
+            // Mix - randomly decide (70% MC, 30% written)
+            useMultipleChoice = Math.random() > 0.3;
+            console.log('[DEBUG] Mode: Mix - useMultipleChoice =', useMultipleChoice);
+        }
 
         if (useMultipleChoice) {
+            console.log('[DEBUG] Calling showMultipleChoice()');
             this.showMultipleChoice(card);
         } else {
+            console.log('[DEBUG] Calling showWrittenAnswer()');
             this.showWrittenAnswer();
         }
 
@@ -407,9 +425,27 @@ class StudyModesManager {
         document.getElementById('testChoices').style.display = 'flex';
         document.getElementById('testWritten').style.display = 'none';
 
-        // Get wrong answers
+        // Get wrong answers - support 2-4 options
         const wrongCards = this.cards.filter(c => c.id !== correctCard.id);
-        const wrongAnswers = shuffleArray(wrongCards).slice(0, 3);
+
+        // Determine how many wrong answers to use (aim for 3, but handle edge cases)
+        const availableWrongAnswers = wrongCards.length;
+        let numWrongAnswers;
+
+        if (availableWrongAnswers >= 3) {
+            // Ideal case: 4 total options (3 wrong + 1 correct)
+            numWrongAnswers = 3;
+        } else if (availableWrongAnswers >= 1) {
+            // Minimum case: 2-3 total options (1-2 wrong + 1 correct)
+            numWrongAnswers = availableWrongAnswers;
+        } else {
+            // Edge case: only 1 card in set, fallback to written answer
+            console.warn('Not enough cards for multiple choice, showing written answer instead');
+            this.showWrittenAnswer();
+            return;
+        }
+
+        const wrongAnswers = shuffleArray(wrongCards).slice(0, numWrongAnswers);
 
         // Mix with correct answer
         const allChoices = shuffleArray([...wrongAnswers, correctCard]);

@@ -1,11 +1,12 @@
 // Service Worker for QuizIt PWA
-const CACHE_NAME = 'quizit-v1';
+const CACHE_NAME = 'quizit-v2';
 const urlsToCache = [
     '/',
     '/index.html',
     '/study.html',
     '/create.html',
     '/analytics.html',
+    '/settings.html',
     '/css/main.css',
     '/css/components.css',
     '/css/analytics.css',

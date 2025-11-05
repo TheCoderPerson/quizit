@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuizIt Settings - Configure your learning preferences">
+    <meta name="theme-color" content="#6366f1">
+    <title>QuizIt - Settings</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">QuizIt</h1>
+                <div class="header-actions">
+                    <button id="themeToggle" class="icon-btn" title="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">My Sets</a>
+                <a href="create.html" class="nav-link">Create Set</a>
+                <a href="settings.html" class="nav-link active">Settings</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper" style="max-width: 800px; margin: 0 auto;">
+                <h2 style="margin-bottom: 2rem;">Settings</h2>
+
+                <!-- Test Mode Settings -->
+                <div class="settings-section" style="background: var(--surface); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                    <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--text-primary);">Test Mode</h3>
+
+                    <div class="setting-item" style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-primary);">
+                            Question Type
+                        </label>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                            Choose how questions are presented during test mode
+                        </p>
+
+                        <div class="radio-group">
+                            <label class="radio-option" style="display: flex; align-items: flex-start; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s;">
+                                <input type="radio" name="questionType" value="mix" id="questionTypeMix" style="margin-right: 0.75rem; margin-top: 0.25rem;">
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.25rem;">Mix</strong>
+                                    <span style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        Questions will randomly alternate between multiple choice and written answers (70% multiple choice, 30% written)
+                                    </span>
+                                </div>
+                            </label>
+
+                            <label class="radio-option" style="display: flex; align-items: flex-start; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s;">
+                                <input type="radio" name="questionType" value="mc" id="questionTypeMC" style="margin-right: 0.75rem; margin-top: 0.25rem;">
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.25rem;">All Multiple Choice</strong>
+                                    <span style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        All questions will be multiple choice with 2-4 answer options
+                                    </span>
+                                </div>
+                            </label>
+
+                            <label class="radio-option" style="display: flex; align-items: flex-start; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.2s;">
+                                <input type="radio" name="questionType" value="written" id="questionTypeWritten" style="margin-right: 0.75rem; margin-top: 0.25rem;">
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.25rem;">All Written</strong>
+                                    <span style="font-size: 0.875rem; color: var(--text-secondary);">
+                                        All questions will require typed written answers
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button id="saveSettings" class="btn btn-primary" style="width: 100%;">
+                        Save Settings
+                    </button>
+                </div>
+
+                <!-- Theme Settings -->
+                <div class="settings-section" style="background: var(--surface); padding: 1.5rem; border-radius: 12px;">
+                    <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--text-primary);">Appearance</h3>
+
+                    <div class="setting-item">
+                        <label style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-primary);">
+                            Theme
+                        </label>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                            Toggle between light and dark mode
+                        </p>
+                        <button id="themeToggleSettings" class="btn btn-secondary">
+                            Toggle Theme
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2024 QuizIt - Learn Smarter, Not Harder</p>
+        </footer>
+    </div>
+
+    <script type="module">
+        import { getThemePreference, setThemePreference, toggleTheme, getTestQuestionTypePreference, setTestQuestionTypePreference, showToast } from './js/utils.js';
+
+        // Define helper function first
+        function updateThemeIcon() {
+            const theme = getThemePreference();
+            const icons = document.querySelectorAll('.theme-icon');
+            icons.forEach(icon => {
+                icon.textContent = theme === 'light' ? '🌙' : '☀️';
+            });
+        }
+
+        // Initialize theme on page load
+        const currentTheme = getThemePreference();
+        setThemePreference(currentTheme);
+        updateThemeIcon();
+
+        // Load current settings
+        const currentType = getTestQuestionTypePreference();
+        const radioButton = document.getElementById(`questionType${currentType === 'mc' ? 'MC' : currentType === 'written' ? 'Written' : 'Mix'}`);
+        if (radioButton) {
+            radioButton.checked = true;
+        }
+
+        // Add visual feedback for selected radio option
+        document.querySelectorAll('.radio-option').forEach(option => {
+            const input = option.querySelector('input[type="radio"]');
+
+            // Set initial state
+            if (input.checked) {
+                option.style.borderColor = 'var(--primary)';
+                option.style.backgroundColor = 'var(--primary-light, rgba(99, 102, 241, 0.1))';
+            }
+
+            option.addEventListener('click', () => {
+                // Remove highlight from all options
+                document.querySelectorAll('.radio-option').forEach(opt => {
+                    opt.style.borderColor = 'var(--border)';
+                    opt.style.backgroundColor = 'transparent';
+                });
+
+                // Highlight selected option
+                option.style.borderColor = 'var(--primary)';
+                option.style.backgroundColor = 'var(--primary-light, rgba(99, 102, 241, 0.1))';
+            });
+        });
+
+        // Save settings
+        document.getElementById('saveSettings').addEventListener('click', () => {
+            const selectedType = document.querySelector('input[name="questionType"]:checked').value;
+            console.log('[DEBUG] Settings page - User selected:', selectedType);
+            setTestQuestionTypePreference(selectedType);
+            console.log('[DEBUG] Settings page - After save, verifying with getter:', getTestQuestionTypePreference());
+            showToast('Settings saved successfully!', 'success');
+        });
+
+        // Theme toggle buttons
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            const newTheme = toggleTheme();
+            updateThemeIcon();
+        });
+
+        document.getElementById('themeToggleSettings').addEventListener('click', () => {
+            const newTheme = toggleTheme();
+            updateThemeIcon();
+        });
+    </script>
+</body>
+</html>
